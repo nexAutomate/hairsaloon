@@ -1,0 +1,2819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="VEE PARIS HAIR — premium Parisian hair styling and beauty."
+  >
+
+  <title>VEE PARIS HAIR — Parisian Hair, Redefined</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #171614;
+  --muted: #77716b;
+  --cream: #f4f0e9;
+  --paper: #fbfaf7;
+  --line: #d9d2c9;
+  --accent: #b59a72;
+  --dark: #171614;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(1180px, calc(100% - 64px));
+  margin: auto;
+}
+
+.section {
+  padding: 130px 0;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #e7dfd4;
+}
+
+.eyebrow.dark {
+  color: #9a8974;
+}
+
+h1,
+h2,
+h3,
+.brand {
+  font-family: "Cormorant Garamond", serif;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+  line-height: 0.93;
+  letter-spacing: -1.5px;
+}
+
+h1 {
+  font-size: clamp(64px, 9vw, 128px);
+}
+
+h2 {
+  font-size: clamp(52px, 6vw, 82px);
+}
+
+h1 em,
+h2 em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+
+/* HEADER */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  color: #fff;
+  transition: 0.35s;
+}
+
+.site-header.scrolled {
+  background: rgba(23, 22, 20, 0.94);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 23px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.brand span {
+  font-style: italic;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+}
+
+.nav-menu > a:not(.nav-cta) {
+  opacity: 0.85;
+  transition: 0.25s;
+}
+
+.nav-menu > a:not(.nav-cta):hover {
+  opacity: 1;
+  color: #d9c19d;
+}
+
+.nav-cta {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  padding: 12px 17px;
+  transition: 0.25s;
+}
+
+.nav-cta:hover {
+  background: #fff;
+  color: var(--ink);
+}
+
+.nav-cta span,
+.btn span {
+  margin-left: 8px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 1px;
+  background: currentColor;
+  margin: 7px auto;
+  transition: 0.3s;
+}
+
+
+/* HERO */
+
+.hero {
+  min-height: 100svh;
+  position: relative;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+
+  background:
+    url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=2200&q=90")
+    center / cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 9, 8, 0.72),
+      rgba(10, 9, 8, 0.28) 60%,
+      rgba(10, 9, 8, 0.4)
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 80px;
+}
+
+.hero-copy {
+  font-size: 15px;
+  max-width: 440px;
+  margin: 28px 0 36px;
+  color: #eee5da;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 22px;
+  border: 1px solid transparent;
+  font-size: 10px;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.btn-light {
+  background: #f6f1e9;
+  color: #171614;
+}
+
+.btn-light:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+.text-link {
+  font-size: 10px;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.text-link span {
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.hero-side-note {
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #d9d0c5;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 35px;
+  left: 32px;
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #ddd;
+}
+
+.scroll-indicator span {
+  display: inline-block;
+  width: 34px;
+  height: 1px;
+  background: #ddd;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+
+/* ABOUT */
+
+.intro {
+  background: var(--paper);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.image-frame {
+  height: 690px;
+  position: relative;
+  padding: 0 25px 25px 0;
+}
+
+.image-frame::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 78%;
+  height: 88%;
+  border: 1px solid var(--accent);
+  z-index: 0;
+}
+
+.image-frame img {
+  position: relative;
+  z-index: 1;
+}
+
+.frame-label {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  z-index: 2;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.intro-content > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 500px;
+  margin: 22px 0;
+}
+
+.dark-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 7px;
+}
+
+.dark-link span {
+  margin-left: 8px;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  border-top: 1px solid var(--line);
+  margin-top: 65px;
+  padding-top: 30px;
+}
+
+.stats div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stats strong {
+  font: 500 45px/1 "Cormorant Garamond", serif;
+}
+
+.stats strong span {
+  font-size: 24px;
+  color: var(--accent);
+}
+
+.stats small {
+  font-size: 8px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+
+/* SERVICES */
+
+.services {
+  background: var(--cream);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 60px;
+}
+
+.section-heading > p {
+  width: 330px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.service-card {
+  min-height: 280px;
+  padding: 27px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  transition: 0.35s;
+}
+
+.service-card:hover {
+  background: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(50, 40, 30, 0.08);
+}
+
+.service-no {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #9c8e80;
+}
+
+.service-icon {
+  display: block;
+  font-size: 23px;
+  color: var(--accent);
+  margin: 34px 0 15px;
+}
+
+.service-card h3 {
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.service-card p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 10px 0 18px;
+  line-height: 1.7;
+}
+
+.service-card a {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 4px;
+}
+
+.service-card a span {
+  margin-left: 7px;
+}
+
+
+/* SIGNATURE */
+
+.signature {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  padding: 0;
+  background: var(--dark);
+  color: #fff;
+  min-height: 720px;
+}
+
+.signature-image {
+  min-height: 650px;
+}
+
+.signature-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px clamp(45px, 7vw, 110px);
+}
+
+.signature-content p:not(.eyebrow) {
+  color: #b9b2aa;
+  font-size: 14px;
+  max-width: 430px;
+  margin: 25px 0;
+}
+
+.signature-content .btn {
+  align-self: flex-start;
+}
+
+
+/* GALLERY */
+
+.gallery {
+  background: var(--paper);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.8fr 1fr;
+  grid-auto-rows: 280px;
+  gap: 14px;
+}
+
+.gallery-item {
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  background: none;
+  position: relative;
+}
+
+.gallery-item img {
+  transition:
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item.tall {
+  grid-row: span 2;
+}
+
+.gallery-item.wide {
+  grid-column: span 2;
+}
+
+
+/* WHY */
+
+.why {
+  background: var(--cream);
+}
+
+.center-heading {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.feature {
+  padding: 35px 28px;
+  border-right: 1px solid var(--line);
+}
+
+.feature:first-child {
+  border-left: 1px solid var(--line);
+}
+
+.feature > span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.feature h3 {
+  font-size: 31px;
+  line-height: 1.05;
+  font-weight: 500;
+  margin: 55px 0 18px;
+}
+
+.feature p {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+
+/* REVIEWS */
+
+.reviews {
+  background: var(--dark);
+  color: #fff;
+}
+
+.review-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.review-title h2 {
+  font-size: clamp(50px, 5vw, 70px);
+}
+
+.review-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 55px;
+}
+
+.review-controls button {
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: 1px solid #625c55;
+  color: #fff;
+  transition: 0.25s;
+}
+
+.review-controls button:hover {
+  background: #fff;
+  color: #111;
+}
+
+.review-slider {
+  overflow: hidden;
+}
+
+.review-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.review-card {
+  min-width: 100%;
+  padding: 20px 10px;
+}
+
+.stars {
+  color: #c9aa78;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin-bottom: 35px;
+}
+
+.review-card blockquote {
+  font: 400 clamp(27px, 3vw, 43px)/1.18
+    "Cormorant Garamond", serif;
+  max-width: 680px;
+}
+
+.review-card p {
+  margin-top: 30px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #aaa39a;
+  text-transform: uppercase;
+}
+
+.review-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 35px;
+}
+
+.review-dots button {
+  width: 22px;
+  height: 2px;
+  border: 0;
+  background: #5d5852;
+}
+
+.review-dots button.active {
+  background: #fff;
+}
+
+
+/* CTA */
+
+.cta-section {
+  min-height: 670px;
+  position: relative;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-bg {
+  position: absolute;
+  inset: 0;
+
+  background:
+    url("https://images.unsplash.com/photo-1595959183082-7bce3b3d1c96?auto=format&fit=crop&w=2200&q=90")
+    center / cover;
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 14, 12, 0.62);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content h2 {
+  font-size: clamp(55px, 7vw, 95px);
+}
+
+.cta-content > p:not(.eyebrow) {
+  max-width: 520px;
+  margin: 28px auto 35px;
+  color: #ded6ce;
+  font-size: 14px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn-outline-light {
+  border-color: #aaa;
+  color: #fff;
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  color: #111;
+}
+
+
+/* CONTACT */
+
+.contact {
+  background: var(--paper);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 110px;
+}
+
+.contact-info > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 420px;
+  margin: 28px 0 50px;
+}
+
+.contact-detail {
+  padding: 17px 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.contact-detail span {
+  color: #9b8c7d;
+  letter-spacing: 1.5px;
+}
+
+.contact-detail strong {
+  font-weight: 500;
+}
+
+.socials {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.contact-form {
+  border-top: 1px solid var(--ink);
+  padding-top: 5px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  margin: 23px 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  padding: 12px 0;
+  outline: 0;
+  color: var(--ink);
+  font-size: 12px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--ink);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  margin-top: 18px;
+}
+
+.form-message {
+  font-size: 11px;
+  margin-top: 16px;
+  color: #56735b;
+  min-height: 20px;
+}
+
+
+/* FOOTER */
+
+.footer {
+  background: var(--dark);
+  color: #fff;
+  padding: 70px 0 25px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.8fr;
+  gap: 60px;
+  padding-bottom: 65px;
+}
+
+.footer-brand {
+  font-size: 30px;
+}
+
+.footer-top p {
+  font-size: 11px;
+  color: #8f8982;
+  margin-top: 15px;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  font-size: 10px;
+  color: #c2bdb7;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 10px;
+}
+
+.footer-contact span {
+  color: #817a72;
+  letter-spacing: 2px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #35322e;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #77716b;
+  text-transform: uppercase;
+}
+
+
+/* BACK TO TOP */
+
+.back-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 45px;
+  height: 45px;
+  background: var(--ink);
+  color: #fff;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 800;
+}
+
+.back-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* LIGHTBOX */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 9, 8, 0.95);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox img {
+  width: auto;
+  max-width: 90vw;
+  max-height: 88vh;
+}
+
+.lightbox-close {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.hero-reveal {
+  opacity: 1;
+  transform: none;
+  animation: heroIn 1.2s ease both;
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* TABLET */
+
+@media (max-width: 950px) {
+
+  .nav-menu {
+    gap: 17px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intro-grid,
+  .contact-grid,
+  .review-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .intro-content {
+    max-width: 700px;
+  }
+
+  .image-frame {
+    height: 600px;
+  }
+
+  .signature {
+    grid-template-columns: 1fr;
+  }
+
+  .signature-image {
+    min-height: 500px;
+  }
+
+  .signature-content {
+    min-height: 500px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature:nth-child(3) {
+    border-left: 1px solid var(--line);
+  }
+
+  .review-layout {
+    gap: 30px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-contact {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .container {
+    width: min(100% - 38px, 1180px);
+  }
+
+  .nav {
+    height: 75px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    inset: 75px 0 0;
+    background: var(--dark);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 45px 25px;
+    gap: 25px;
+
+    transform: translateX(100%);
+    transition: 0.35s;
+  }
+
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .nav-menu a {
+    font-size: 13px;
+  }
+
+  .nav-cta {
+    margin-top: 10px;
+  }
+
+  .menu-toggle.active span:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  .hero-content {
+    padding-top: 70px;
+  }
+
+  .hero-side-note {
+    display: none;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .scroll-indicator {
+    left: 19px;
+  }
+
+  .section {
+    padding: 85px 0;
+  }
+
+  .image-frame {
+    height: 470px;
+  }
+
+  .stats {
+    gap: 18px;
+    justify-content: space-between;
+  }
+
+  .stats div {
+    gap: 7px;
+  }
+
+  .stats strong {
+    font-size: 34px;
+  }
+
+  .stats small {
+    font-size: 7px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading > p {
+    width: auto;
+    margin-top: 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 245px;
+  }
+
+  .signature-image {
+    min-height: 420px;
+  }
+
+  .signature-content {
+    padding: 75px 30px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .gallery-item.tall {
+    grid-row: span 2;
+  }
+
+  .gallery-item.wide {
+    grid-column: span 2;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature,
+  .feature:first-child,
+  .feature:nth-child(3) {
+    border-left: 1px solid var(--line);
+  }
+
+  .feature h3 {
+    margin-top: 35px;
+  }
+
+  .cta-section {
+    min-height: 590px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-actions .btn {
+    width: min(100%, 300px);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lightbox {
+    padding: 20px;
+  }
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .hero-reveal {
+    animation: none;
+    transition: none;
+  }
+}
+</style>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="header">
+    <nav class="nav container">
+
+      <a href="#home" class="brand">
+        <span>VEE</span> PARIS HAIR
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+
+        <a href="#contact" class="nav-cta">
+          Book an Appointment <span>↗</span>
+        </a>
+
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-image"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content container reveal hero-reveal">
+
+        <p class="eyebrow">
+          PARIS • HAIR • BEAUTY
+        </p>
+
+        <h1>
+          PARISIAN HAIR,
+          <br>
+          <em>REDEFINED.</em>
+        </h1>
+
+        <p class="hero-copy">
+          Where effortless French style meets modern hair artistry.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#contact" class="btn btn-light">
+            Book an Appointment <span>↗</span>
+          </a>
+
+          <a href="#services" class="text-link">
+            Explore our services <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-side-note">
+        EST. PARIS · YOUR SIGNATURE STYLE
+      </div>
+
+      <a href="#about" class="scroll-indicator">
+        <span></span>
+        SCROLL TO DISCOVER
+      </a>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="intro section" id="about">
+
+      <div class="container intro-grid">
+
+        <div class="image-frame reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1100&q=85"
+            alt="Elegant modern hair salon interior"
+          >
+
+          <span class="frame-label">
+            VPH / 01
+          </span>
+
+        </div>
+
+
+        <div class="intro-content reveal">
+
+          <p class="eyebrow dark">
+            THE VEE EXPERIENCE
+          </p>
+
+          <h2>
+            THE ART OF
+            <br>
+            <em>BEAUTIFUL HAIR</em>
+          </h2>
+
+          <p>
+            VEE PARIS HAIR is a modern approach to Parisian beauty —
+            effortless, personal and quietly confident.
+          </p>
+
+          <p>
+            Every look begins with understanding your features,
+            lifestyle and the style you want to express.
+          </p>
+
+          <p>
+            From precision cuts and natural colour to occasion styling,
+            every detail is considered to create hair that feels
+            unmistakably yours.
+          </p>
+
+          <a href="#contact" class="dark-link">
+            Discover the experience <span>↗</span>
+          </a>
+
+
+          <div class="stats">
+
+            <div>
+              <strong>10<span>+</span></strong>
+              <small>
+                Years of
+                <br>
+                Experience
+              </small>
+            </div>
+
+            <div>
+              <strong>1000<span>+</span></strong>
+              <small>
+                Happy
+                <br>
+                Clients
+              </small>
+            </div>
+
+            <div>
+              <strong>5<span>★</span></strong>
+              <small>
+                Client
+                <br>
+                Experience
+              </small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="services section" id="services">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+
+            <p class="eyebrow dark">
+              THE MENU
+            </p>
+
+            <h2>
+              OUR <em>SERVICES</em>
+            </h2>
+
+          </div>
+
+          <p>
+            Thoughtful hair artistry, tailored to your individual
+            style and finished with a distinctly Parisian touch.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <span class="service-no">01</span>
+            <span class="service-icon">✦</span>
+
+            <h3>
+              Haircut & Styling
+            </h3>
+
+            <p>
+              Precision cuts and effortless styling shaped around you.
+            </p>
+
+            <a href="#contact">
+              Book <span>↗</span>
+            </a>
+          </article>
+
+
+          <article class="service-card reveal">
+            <span class="service-no">02</span>
+            <span class="service-icon">◌</span>
+
+            <h3>
+              Blow Dry
+            </h3>
+
+            <p>
+              Polished, natural movement for an instantly elevated finish.
+            </p>
+
+            <a href="#contact">
+              Book <span>↗</span>
+            </a>
+          </article>
+
+
+          <article class="service-card reveal">
+            <span class="service-no">03</span>
+            <span class="service-icon">◇</span>
+
+            <h3>
+              Hair Colour
+            </h3>
+
+            <p>
+              Personalised colour designed to complement your complexion.
+            </p>
+
+            <a href="#contact">
+              Book <span>↗</span>
+            </a>
+          </article>
+
+
+          <article class="service-card reveal">
+            <span class="service-no">04</span>
+            <span class="service-icon">✧</span>
+
+            <h3>
+              Balayage
+            </h3>
+
+            <p>
+              Soft dimension and luminous tones with an effortless finish.
+            </p>
+
+            <a href="#contact">
+              Book <span>↗</span>
+            </a>
+          </article>
+
+
+          <article class="service-card reveal">
+            <span class="service-no">05</span>
+            <span class="service-icon">⌁</span>
+
+            <h3>
+              Highlights
+            </h3>
+
+            <p>
+              Refined light and natural depth, tailored to your look.
+            </p>
+
+            <a href="#contact">
+              Book <span>↗</span>
+            </a>
+          </article>
+
+
+          <article class="service-card reveal">
+            <span class="service-no">06</span>
+            <span class="service-icon">❋</span>
+
+            <h3>
+              Hair Treatment
+            </h3>
+
+            <p>
+              Restorative care for healthier-looking,
+              beautifully finished hair.
+            </p>
+
+            <a href="#contact">
+              Book <span>↗</span>
+            </a>
+          </article>
+
+
+          <article class="service-card reveal">
+            <span class="service-no">07</span>
+            <span class="service-icon">♡</span>
+
+            <h3>
+              Bridal Hair
+            </h3>
+
+            <p>
+              Elegant, timeless styling for one of your
+              most memorable days.
+            </p>
+
+            <a href="#contact">
+              Book <span>↗</span>
+            </a>
+          </article>
+
+
+          <article class="service-card reveal">
+            <span class="service-no">08</span>
+            <span class="service-icon">✺</span>
+
+            <h3>
+              Special Occasion
+            </h3>
+
+            <p>
+              Modern statement looks for evenings,
+              events and celebrations.
+            </p>
+
+            <a href="#contact">
+              Book <span>↗</span>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SIGNATURE -->
+    <section class="signature section">
+
+      <div class="signature-image reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1500&q=85"
+          alt="Hair styling in a premium salon"
+        >
+
+      </div>
+
+
+      <div class="signature-content reveal">
+
+        <p class="eyebrow">
+          THE SIGNATURE EXPERIENCE
+        </p>
+
+        <h2>
+          YOUR HAIR.
+          <br>
+          <em>YOUR SIGNATURE.</em>
+        </h2>
+
+        <p>
+          A considered consultation, a precise technique and a finish
+          that feels natural to you.
+        </p>
+
+        <p>
+          Our approach is less about following trends and more about
+          creating a look that becomes your own.
+        </p>
+
+        <a href="#contact" class="btn btn-dark">
+          Book Your Visit <span>↗</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+    <section class="gallery section" id="gallery">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+
+            <p class="eyebrow dark">
+              VISUAL JOURNAL
+            </p>
+
+            <h2>
+              THE <em>GALLERY</em>
+            </h2>
+
+          </div>
+
+          <p>
+            A glimpse into our world of texture, colour,
+            movement and modern Parisian beauty.
+          </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+          <button
+            class="gallery-item tall reveal"
+            data-image="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1300&q=90"
+          >
+
+            <img
+              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85"
+              alt="Woman with styled hair"
+            >
+
+          </button>
+
+
+          <button
+            class="gallery-item reveal"
+            data-image="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1300&q=90"
+          >
+
+            <img
+              src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1000&q=85"
+              alt="Elegant beauty portrait"
+            >
+
+          </button>
+
+
+          <button
+            class="gallery-item wide reveal"
+            data-image="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1500&q=90"
+          >
+
+            <img
+              src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1200&q=85"
+              alt="Professional hairstyling"
+            >
+
+          </button>
+
+
+          <button
+            class="gallery-item reveal"
+            data-image="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1300&q=90"
+          >
+
+            <img
+              src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1000&q=85"
+              alt="Hair salon styling"
+            >
+
+          </button>
+
+
+          <button
+            class="gallery-item tall reveal"
+            data-image="https://images.unsplash.com/photo-1595959183082-7bce3b3d1c96?auto=format&fit=crop&w=1300&q=90"
+          >
+
+            <img
+              src="https://images.unsplash.com/photo-1595959183082-7bce3b3d1c96?auto=format&fit=crop&w=1000&q=85"
+              alt="Fashionable hairstyle"
+            >
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHY -->
+    <section class="why section">
+
+      <div class="container">
+
+        <div class="center-heading reveal">
+
+          <p class="eyebrow dark">
+            THE DIFFERENCE
+          </p>
+
+          <h2>
+            WHY <em>VEE?</em>
+          </h2>
+
+        </div>
+
+
+        <div class="features-grid">
+
+          <article class="feature reveal">
+            <span>01</span>
+
+            <h3>
+              Personalised
+              <br>
+              Styling
+            </h3>
+
+            <p>
+              Hair designed around your personality,
+              features and lifestyle.
+            </p>
+          </article>
+
+
+          <article class="feature reveal">
+            <span>02</span>
+
+            <h3>
+              Parisian
+              <br>
+              Aesthetic
+            </h3>
+
+            <p>
+              Effortless, refined and modern styling
+              without trying too hard.
+            </p>
+          </article>
+
+
+          <article class="feature reveal">
+            <span>03</span>
+
+            <h3>
+              Attention
+              <br>
+              to Detail
+            </h3>
+
+            <p>
+              Every appointment is shaped around
+              precision and thoughtful finishing.
+            </p>
+          </article>
+
+
+          <article class="feature reveal">
+            <span>04</span>
+
+            <h3>
+              Premium
+              <br>
+              Experience
+            </h3>
+
+            <p>
+              A calm, welcoming environment
+              designed around your visit.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+    <section class="reviews section" id="reviews">
+
+      <div class="container review-layout">
+
+        <div class="review-title reveal">
+
+          <p class="eyebrow">
+            CLIENT NOTES
+          </p>
+
+          <h2>
+            HEARD FROM
+            <br>
+            <em>OUR CLIENTS</em>
+          </h2>
+
+          <div class="review-controls">
+
+            <button id="prevReview">
+              ←
+            </button>
+
+            <button id="nextReview">
+              →
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="review-slider reveal">
+
+          <div class="review-track" id="reviewTrack">
+
+            <article class="review-card">
+
+              <div class="stars">
+                ★★★★★
+              </div>
+
+              <blockquote>
+                “A beautifully considered experience from the
+                consultation to the final finish. I left feeling
+                like the best version of myself.”
+              </blockquote>
+
+              <p>
+                — Camille R.
+              </p>
+
+            </article>
+
+
+            <article class="review-card">
+
+              <div class="stars">
+                ★★★★★
+              </div>
+
+              <blockquote>
+                “The attention to detail is incredible.
+                The colour looks natural, luminous and
+                exactly what I wanted.”
+              </blockquote>
+
+              <p>
+                — Sophie M.
+              </p>
+
+            </article>
+
+
+            <article class="review-card">
+
+              <div class="stars">
+                ★★★★★
+              </div>
+
+              <blockquote>
+                “Effortless, elegant and genuinely personal.
+                It finally feels like I have found my salon
+                in Paris.”
+              </blockquote>
+
+              <p>
+                — Emma L.
+              </p>
+
+            </article>
+
+          </div>
+
+
+          <div class="review-dots" id="reviewDots">
+
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta-section">
+
+      <div class="cta-bg"></div>
+      <div class="cta-overlay"></div>
+
+      <div class="container cta-content reveal">
+
+        <p class="eyebrow">
+          YOUR NEXT LOOK AWAITS
+        </p>
+
+        <h2>
+          READY FOR
+          <br>
+          <em>YOUR NEXT LOOK?</em>
+        </h2>
+
+        <p>
+          Book your appointment and discover a more confident
+          version of your style.
+        </p>
+
+        <div class="cta-actions">
+
+          <a href="tel:+33666051011" class="btn btn-light">
+            Call +33 6 66 05 10 11 <span>↗</span>
+          </a>
+
+          <a href="#contact" class="btn btn-outline-light">
+            Book an Appointment <span>↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+
+      <div class="container contact-grid">
+
+        <div class="contact-info reveal">
+
+          <p class="eyebrow dark">
+            COME SAY HELLO
+          </p>
+
+          <h2>
+            LET'S CREATE
+            <br>
+            <em>YOUR LOOK.</em>
+          </h2>
+
+          <p>
+            Ready for a change, a refresh or simply a moment
+            for yourself? We would love to hear from you.
+          </p>
+
+
+          <div class="contact-detail">
+
+            <span>
+              LOCATION
+            </span>
+
+            <strong>
+              Paris, France
+            </strong>
+
+          </div>
+
+
+          <div class="contact-detail">
+
+            <span>
+              PHONE
+            </span>
+
+            <a href="tel:+33666051011">
+              <strong>
+                +33 6 66 05 10 11
+              </strong>
+            </a>
+
+          </div>
+
+
+          <div class="contact-detail">
+
+            <span>
+              HOURS
+            </span>
+
+            <strong>
+              Mon – Sat · 10:00 – 19:00
+            </strong>
+
+          </div>
+
+
+          <div class="socials">
+
+            <a href="#">
+              Instagram ↗
+            </a>
+
+            <a href="#">
+              Facebook ↗
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <form
+          class="contact-form reveal"
+          id="contactForm"
+          novalidate
+        >
+
+          <div class="form-row">
+
+            <label>
+              Name
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+              >
+
+            </label>
+
+
+            <label>
+              Phone
+
+              <input
+                type="tel"
+                name="phone"
+                placeholder="+33 ..."
+                required
+              >
+
+            </label>
+
+          </div>
+
+
+          <label>
+            Email
+
+            <input
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            >
+
+          </label>
+
+
+          <div class="form-row">
+
+            <label>
+              Preferred Service
+
+              <select name="service" required>
+
+                <option value="">
+                  Choose a service
+                </option>
+
+                <option>
+                  Haircut & Styling
+                </option>
+
+                <option>
+                  Blow Dry
+                </option>
+
+                <option>
+                  Hair Colour
+                </option>
+
+                <option>
+                  Balayage
+                </option>
+
+                <option>
+                  Highlights
+                </option>
+
+                <option>
+                  Hair Treatment
+                </option>
+
+                <option>
+                  Bridal Hair
+                </option>
+
+                <option>
+                  Special Occasion Styling
+                </option>
+
+              </select>
+
+            </label>
+
+
+            <label>
+              Preferred Date
+
+              <input
+                type="date"
+                name="date"
+                required
+              >
+
+            </label>
+
+          </div>
+
+
+          <label>
+            Message
+
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Tell us a little about what you're looking for..."
+            ></textarea>
+
+          </label>
+
+
+          <button
+            class="btn btn-dark submit-btn"
+            type="submit"
+          >
+            Request Appointment <span>↗</span>
+          </button>
+
+          <p
+            class="form-message"
+            id="formMessage"
+          ></p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-top">
+
+      <div>
+
+        <a href="#home" class="brand footer-brand">
+          <span>VEE</span> PARIS HAIR
+        </a>
+
+        <p>
+          Parisian hair, redefined.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+
+      </div>
+
+
+      <div class="footer-contact">
+
+        <span>
+          PARIS, FRANCE
+        </span>
+
+        <a href="tel:+33666051011">
+          +33 6 66 05 10 11
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <span>
+        © 2026 VEE PARIS HAIR. All rights reserved.
+      </span>
+
+      <span>
+        Designed with intention in Paris.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- BACK TO TOP -->
+  <button
+    class="back-top"
+    id="backTop"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+
+  <!-- LIGHTBOX -->
+  <div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      aria-label="Close image"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt="Expanded gallery image"
+    >
+
+  </div>
+
+
+  <script>
+    const header = document.getElementById("header");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const backTop = document.getElementById("backTop");
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+menuToggle.addEventListener("click", () => {
+
+  const open = navMenu.classList.toggle("open");
+
+  menuToggle.classList.toggle("active", open);
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    open
+  );
+
+  document.body.classList.toggle(
+    "menu-open",
+    open
+  );
+
+});
+
+
+document
+  .querySelectorAll(".nav-menu a")
+  .forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      navMenu.classList.remove("open");
+
+      menuToggle.classList.remove("active");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      document.body.classList.remove(
+        "menu-open"
+      );
+
+    });
+
+  });
+
+
+/* =========================
+   NAVBAR + BACK TO TOP
+========================= */
+
+function handleScroll() {
+
+  header.classList.toggle(
+    "scrolled",
+    window.scrollY > 40
+  );
+
+  backTop.classList.toggle(
+    "show",
+    window.scrollY > 600
+  );
+
+}
+
+window.addEventListener(
+  "scroll",
+  handleScroll
+);
+
+handleScroll();
+
+
+backTop.addEventListener(
+  "click",
+  () => {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+);
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealObserver =
+  new IntersectionObserver(
+
+    (entries, observer) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add(
+            "visible"
+          );
+
+          observer.unobserve(
+            entry.target
+          );
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold: 0.12
+    }
+
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(el =>
+    revealObserver.observe(el)
+  );
+
+
+/* =========================
+   GALLERY LIGHTBOX
+========================= */
+
+const lightbox =
+  document.getElementById("lightbox");
+
+const lightboxImage =
+  document.getElementById(
+    "lightboxImage"
+  );
+
+const lightboxClose =
+  document.getElementById(
+    "lightboxClose"
+  );
+
+
+document
+  .querySelectorAll(".gallery-item")
+  .forEach(item => {
+
+    item.addEventListener(
+      "click",
+      () => {
+
+        lightboxImage.src =
+          item.dataset.image;
+
+        lightboxImage.alt =
+          item.querySelector(
+            "img"
+          ).alt;
+
+        lightbox.classList.add(
+          "open"
+        );
+
+        lightbox.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+        document.body.style.overflow =
+          "hidden";
+
+      }
+    );
+
+  });
+
+
+function closeLightbox() {
+
+  lightbox.classList.remove(
+    "open"
+  );
+
+  lightbox.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow = "";
+
+}
+
+
+lightboxClose.addEventListener(
+  "click",
+  closeLightbox
+);
+
+
+lightbox.addEventListener(
+  "click",
+  event => {
+
+    if (
+      event.target === lightbox
+    ) {
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (event.key === "Escape") {
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+/* =========================
+   TESTIMONIAL SLIDER
+========================= */
+
+const reviewTrack =
+  document.getElementById(
+    "reviewTrack"
+  );
+
+const reviewDots = [
+  ...document.querySelectorAll(
+    "#reviewDots button"
+  )
+];
+
+let reviewIndex = 0;
+
+
+function showReview(index) {
+
+  reviewIndex =
+    (index + 3) % 3;
+
+  reviewTrack.style.transform =
+    `translateX(-${reviewIndex * 100}%)`;
+
+  reviewDots.forEach(
+    (dot, index) => {
+
+      dot.classList.toggle(
+        "active",
+        index === reviewIndex
+      );
+
+    }
+  );
+
+}
+
+
+document
+  .getElementById("prevReview")
+  .addEventListener(
+    "click",
+    () => {
+
+      showReview(
+        reviewIndex - 1
+      );
+
+    }
+  );
+
+
+document
+  .getElementById("nextReview")
+  .addEventListener(
+    "click",
+    () => {
+
+      showReview(
+        reviewIndex + 1
+      );
+
+    }
+  );
+
+
+reviewDots.forEach(
+  (dot, index) => {
+
+    dot.addEventListener(
+      "click",
+      () => {
+
+        showReview(index);
+
+      }
+    );
+
+  }
+);
+
+
+/* AUTO SLIDER */
+
+let reviewTimer =
+  setInterval(() => {
+
+    showReview(
+      reviewIndex + 1
+    );
+
+  }, 6000);
+
+
+document
+  .querySelector(".review-slider")
+  .addEventListener(
+    "mouseenter",
+    () => {
+
+      clearInterval(
+        reviewTimer
+      );
+
+    }
+  );
+
+
+document
+  .querySelector(".review-slider")
+  .addEventListener(
+    "mouseleave",
+    () => {
+
+      reviewTimer =
+        setInterval(() => {
+
+          showReview(
+            reviewIndex + 1
+          );
+
+        }, 6000);
+
+    }
+  );
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+const contactForm =
+  document.getElementById(
+    "contactForm"
+  );
+
+const formMessage =
+  document.getElementById(
+    "formMessage"
+  );
+
+
+contactForm.addEventListener(
+  "submit",
+  event => {
+
+    event.preventDefault();
+
+    if (
+      !contactForm.checkValidity()
+    ) {
+
+      contactForm.reportValidity();
+
+      return;
+
+    }
+
+
+    formMessage.textContent =
+      "Thank you — your appointment request has been received. We will be in touch shortly.";
+
+
+    contactForm.reset();
+
+  }
+);
+
+
+/* =========================
+   ACTIVE NAVIGATION
+========================= */
+
+const sections = [
+  ...document.querySelectorAll(
+    "main section[id]"
+  )
+];
+
+const navLinks = [
+  ...document.querySelectorAll(
+    ".nav-menu a:not(.nav-cta)"
+  )
+];
+
+
+const sectionObserver =
+  new IntersectionObserver(
+
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (
+          entry.isIntersecting
+        ) {
+
+          navLinks.forEach(link => {
+
+            link.classList.toggle(
+              "active",
+              link.getAttribute(
+                "href"
+              ) ===
+              `#${entry.target.id}`
+            );
+
+          });
+
+        }
+
+      });
+
+    },
+
+    {
+      rootMargin:
+        "-35% 0px -55% 0px"
+    }
+
+  );
+
+
+sections.forEach(section =>
+  sectionObserver.observe(section)
+);
+  </script>
+
+</body>
+</html>
